@@ -45,9 +45,11 @@ td, th {
 		.addEventListener("click", function(ev){
 			let className = ev.target.className;
 			if(className == "btn_update"){
-				document.location.href="${rootPath}/list/update?li_seq=" + ${Li.li_seq}
+				if(confirm("일정을 수정하시겠습니까")){
+					document.location.href="${rootPath}/list/update?li_seq=" + ${Li.li_seq}	
+				}
 			} else if(className == "btn_delete"){
-				if(confirm("일정을 삭제합니다")){
+				if(confirm("일정을 삭제하시겠습니까")){
 					document.location.href="${rootPath}/list/delete?li_seq=" + ${Li.li_seq}
 				}
 			}

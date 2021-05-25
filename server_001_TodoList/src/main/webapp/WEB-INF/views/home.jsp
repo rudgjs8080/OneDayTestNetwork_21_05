@@ -51,12 +51,22 @@ div.home_btn {
 	text-align: left;
 }
 
-div.home_btn button {
+div.home_btn button,
+form.date button {
 	background-color: green;
 	color: white;
-	height: 50px;
-	padding: 10px;
+	height: 40px;
+	padding: 5px;
 	font-size: 20px;
+	margin-bottom: 25px;
+}
+form.date button {
+	margin-right: 20px;
+}
+form.date input {
+	height: 40px;
+	font-size: 20px;
+	padding : 10px;	
 }
 </style>
 </head>
@@ -64,7 +74,11 @@ div.home_btn button {
 <%@ include file="/WEB-INF/views/include_title.jsp" %>
 	<div class="home_btn">
 		<button class="btn_insert">일정 추가하기</button>
+		
+		<label></label>
+		<form class="date"><button>날짜 조회</button><input type="date" name="li_date"></form>
 	</div>
+	
 <section>
 	<table id="list">
 		<tr>

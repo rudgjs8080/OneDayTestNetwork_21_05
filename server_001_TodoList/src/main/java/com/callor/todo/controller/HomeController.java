@@ -25,12 +25,17 @@ public class HomeController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<ListVO> liList = liService.selectAll();
+		String li_date = req.getParameter("li_date");
+		List<ListVO> liList = null;
+		if (li_date == null || li_date.equals("")) {
+			liList = liService.selectAll();
+		} else {
+			liList = liService.findByDate(li_date);
+		}
+
 		req.setAttribute("LiList", liList);
 
 		req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req, resp);
 	}
-
-	
 
 }

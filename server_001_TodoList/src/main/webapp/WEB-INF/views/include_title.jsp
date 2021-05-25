@@ -2,11 +2,13 @@
     pageEncoding="UTF-8"%>
 <style>
 * {
-	margin : 0;
 	padding : 0;
 	box-sizing : border-box;
 }
 h1.main{
+	margin-top: 0px;
+	margin-left : 20%;
+	margin-right: 20%;
 	background-color: rgba(0,255,0,0.5);
 	color:white;
 	text-align: center;
@@ -34,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	document.querySelector("nav#main")
 	.addEventListener("click", function(ev){
 		let text = ev.target.textContent
-		alert(text + "을 누르셨습니다")
+		// alert(text + "을 누르셨습니다")
 		
 		if(text == "home"){
 			url += "/"

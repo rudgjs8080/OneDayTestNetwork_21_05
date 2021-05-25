@@ -9,7 +9,7 @@ public interface ListService {
 	public List<ListVO> selectAll();
 	
 	public ListVO findById(Long seq);
-	public List<ListVO> findByDate();
+	public List<ListVO> findByDate(String li_date);
 	public List<ListVO> findByPlace();
 	
 	public Integer insert(ListVO liVO);

@@ -45,12 +45,12 @@ form.v1 legend {
 		.addEventListener("click", function(ev){
 			
 			let dom = document;
-			let li_date = dom.querySelector("input[name='li_date']");
-			let li_time = dom.querySelector("input[name='li_time']");
+			//let li_date = dom.querySelector("input[name='li_date']");
+			//let li_time = dom.querySelector("input[name='li_time']");
 			let li_place = dom.querySelector("input[name='li_place']");
 			let li_content = dom.querySelector("input[name='li_content']");
 			
-			if(li_date.value ==""){
+			/*if(li_date.value ==""){
 				alert("날짜를 반드시 입력해주세요")
 				li_date.focus();
 				return false;
@@ -59,7 +59,7 @@ form.v1 legend {
 				alert("시간을 반드시 입력해주세요")
 				li_time.focus();
 				return false;
-			}
+			}*/
 			if(li_place.value ==""){
 				alert("장소를 반드시 입력해주세요")
 				li_place.focus();
@@ -71,8 +71,8 @@ form.v1 legend {
 				return false;
 			}
 			alert("저장내용" + "\n"
-				+ li_date.value + "\n"
-				+ li_time.value + "\n"
+				//+ li_date.value + "\n"
+				//+ li_time.value + "\n"
 				+ li_place.value + "\n"
 				+ li_content.value + "\n")
 				dom.querySelector("form.v1").submit();

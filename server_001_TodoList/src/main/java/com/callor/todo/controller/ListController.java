@@ -1,6 +1,8 @@
 package com.callor.todo.controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,7 +35,17 @@ public class ListController extends HttpServlet {
 			req.setAttribute("Li", liVO);
 			req.getRequestDispatcher("/WEB-INF/views/view.jsp").forward(req, resp);
 		} else if (subPath.equals("/insert")) {
-
+			ListVO liVO = new ListVO();
+			
+			SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
+			SimpleDateFormat st = new SimpleDateFormat("HH:MM:ss");
+			
+			Date date = new Date(System.currentTimeMillis());
+			
+			liVO.setLi_seq(0L);
+			liVO.setLi_date(sd.format(date));
+			liVO.setLi_time(st.format(date));
+			req.setAttribute("Li", liVO);
 			req.getRequestDispatcher("/WEB-INF/views/insert.jsp").forward(req, resp);
 		} else if (subPath.equals("/update")) {
 			String strSeq = req.getParameter("li_seq");

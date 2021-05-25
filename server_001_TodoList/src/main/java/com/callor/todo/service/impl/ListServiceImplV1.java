@@ -43,7 +43,7 @@ public class ListServiceImplV1 implements ListService {
 	public List<ListVO> selectAll() {
 		// TODO 전체조회
 		String sql = " select * from tbl_list";
-		sql += " order by li_seq";
+		sql += " order by li_date, li_time";
 
 		PreparedStatement pStr = null;
 
@@ -87,17 +87,16 @@ public class ListServiceImplV1 implements ListService {
 	}
 
 	@Override
-	public List<ListVO> findByDate() {
+	public List<ListVO> findByDate(String li_date) {
 		// TODO 날짜로 조회
-		String sql = " select * from tbl_list";
+		String sql = " select * from tbl_list ";
 		sql += " where li_date = ? ";
-
 		PreparedStatement pStr = null;
-
 		try {
 			pStr = dbConn.prepareStatement(sql);
-			pStr.setString(1, DbInfo.li_date);
+			pStr.setString(1, li_date);
 			List<ListVO> liList = this.select(pStr);
+			System.out.println(liList.toString());
 			pStr.close();
 
 			return liList;
