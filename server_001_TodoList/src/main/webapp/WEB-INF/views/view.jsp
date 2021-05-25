@@ -9,17 +9,21 @@
 <title>view.jsp</title>
 <style>
 div.view_btn{
-width:80%;
+width:50%;
 margin: 10px auto;
 text-align: right;
 }
 div.view_btn button:nth-child(1) {
 		background-color:  blue;
 		color: white;
+		padding : 10px;
+		margin: 10px;
 	}
 	div.view_btn button:nth-child(2) {
 		background-color:  gray;
 		color: white;
+		padding : 10px;
+		margin: 10px;
 	}
 table{
 	border-collapse: collapse;
@@ -27,6 +31,7 @@ table{
 	margin: 15px auto;
 }
 td, th {
+	font-size : 25px;
 	border:1px solid green;
 	padding : 5px;
 	text-align : center;
@@ -54,10 +59,10 @@ td, th {
 <body>
 <%@ include file="/WEB-INF/views/include_title.jsp" %>
 <table>
-	<tr><th>날짜 : </th><td>${Li.li_date}</td></tr>
-	<tr><th>시간 : </th><td>${Li.li_time}</td></tr>
-	<tr><th>장소 : </th><td>${Li.li_place}</td></tr>
-	<tr><th>일정 : </th><td>${Li.li_content}</td></tr>
+	<tr><th>날짜</th><td>${Li.li_date}</td></tr>
+	<tr><th>시간</th><td>${Li.li_time}</td></tr>
+	<tr><th>장소</th><td>${Li.li_place}</td></tr>
+	<tr><th>일정</th><td>${Li.li_content}</td></tr>
 </table>
 
 <div class="view_btn">

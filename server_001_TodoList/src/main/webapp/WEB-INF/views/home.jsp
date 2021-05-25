@@ -8,7 +8,18 @@
 <meta charset="UTF-8">
 <title>home.jsp</title>
 <script>
+
 	document.addEventListener("DOMContentLoaded", function(){
+		
+		document.querySelector("div.home_btn")
+		.addEventListener("click", function(ev){
+		let className = ev.target.className;
+		if(className == "btn_insert"){
+		document.location.href="${rootPath}/list/insert"
+		}
+		})
+		
+		
 		document.querySelector("table#list")
 		.addEventListener("click", function(ev){
 			let tag_name = ev.target.tagName;
@@ -34,13 +45,26 @@ td, th {
 	text-align : center;
 	
 }
+div.home_btn {
+	width: 50% ;
+	margin: 20px auto;
+	text-align: left;
+}
 
+div.home_btn button {
+	background-color: green;
+	color: white;
+	height: 50px;
+	padding: 10px;
+	font-size: 20px;
+}
 </style>
 </head>
 <body>
 <%@ include file="/WEB-INF/views/include_title.jsp" %>
-	<a href="${rootPath }/list/insert">일정추가</a>
-	
+	<div class="home_btn">
+		<button class="btn_insert">일정 추가하기</button>
+	</div>
 <section>
 	<table id="list">
 		<tr>

@@ -60,23 +60,23 @@ public class ListServiceImplV1 implements ListService {
 
 		return null;
 	}
-	
+
 	@Override
 	public ListVO findById(Long seq) {
 		// TODO Auto-generated method stub
 		String sql = " select * from tbl_list ";
 		sql += " where li_seq = ? ";
-		
+
 		PreparedStatement pStr = null;
-		
+
 		try {
 			pStr = dbConn.prepareStatement(sql);
 			pStr.setLong(1, seq);
-			
+
 			List<ListVO> liList = this.select(pStr);
 			pStr.close();
-			if(liList != null && liList.size() > 0) {
-				
+			if (liList != null && liList.size() > 0) {
+
 				return liList.get(0);
 			}
 		} catch (SQLException e) {
@@ -86,8 +86,7 @@ public class ListServiceImplV1 implements ListService {
 		return null;
 	}
 
-	
-		@Override
+	@Override
 	public List<ListVO> findByDate() {
 		// TODO 날짜로 조회
 		String sql = " select * from tbl_list";
@@ -149,6 +148,7 @@ public class ListServiceImplV1 implements ListService {
 			pStr.setString(4, liVO.getLi_content());
 			System.out.println("insert 완료");
 			Integer result = pStr.executeUpdate();
+			//System.out.println(result); 1값이 나옴
 			pStr.close();
 			return result;
 		} catch (SQLException e) {
@@ -204,8 +204,5 @@ public class ListServiceImplV1 implements ListService {
 
 		return null;
 	}
-
-	
-	
 
 }

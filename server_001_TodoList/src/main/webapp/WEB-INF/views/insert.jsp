@@ -14,7 +14,7 @@ margin: 10px auto;
 }
 
 form.v1 fieldset {
-border : 1px solid blue;
+border : 3px solid green;
 border-radius : 10px;
 padding :5px;
 }
@@ -27,6 +27,16 @@ form.v1 input {
 form.v1 label {
 	width: 150px;
 	text-align: right;
+}
+form.v1 button{
+	width: 150px;
+	padding : 5px;
+	background-color: white;
+	color: green;
+}
+form.v1 legend {
+	letter-spacing: 10px;
+	font-size: 30px;
 }
 </style>
 <script>
@@ -89,12 +99,13 @@ form.v1 label {
 		</div>
 		
 		<div>
-			<label>내용	: </label><input name="li_content" 
+			<label>할 일	: </label><input name="li_content" 
 				value="${Li.li_content}">
 			
 		</div>
 		<label></label>
-		<button class="btn_insert" type="button">추가</button>
+		<div>
+		<button class="btn_insert" type="button">추가</button></div>
 	</fieldset>
 </form>
 </body>
